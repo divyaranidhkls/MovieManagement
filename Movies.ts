@@ -1,3 +1,5 @@
+import { constants } from "node:fs/promises";
+
   type Movie = 
   {
 
@@ -6,7 +8,7 @@
     director:string;
     release_Year:Date;
     genre:string;
-    rating?:number;
+    rating:number[];
 
   };
   
@@ -18,24 +20,38 @@
         this.movies=new Map<string,Movie>();
     }
 
-  addMovie(id:string,title:string,director:string,release_Year:Date,genre:string) : void
+  addMovie(id:string,title:string,director:string,release_Year:Date,genre:string) : string
     {
-        const newMovie={id,title,director,release_Year,genre};
+        const newMovie={id,title,director,release_Year,genre,rating:[]};
         this.movies.set(id,newMovie);
+        return "Movie Added Succefully";
     }
 
    rateMovie(id:string,rating:number) : Boolean
    {
         const movies=this.movies.get(id);
-        if(movies)
+        if(movies && (rating>=1 && rating<=5))
         {
-            movies.rating=rating;
+            movies.rating.push(rating);
             return true;
         }
         return false;
    }
 
+ getAverageRating(id:string) : number
+ {
 
+    const movie=this.movies.get(id);
+    if(movie)
+    {
+        const sum=movie.rating.reduce((acc,curr)=> acc + curr,0);
+        return sum/movie.rating.length;
+    }
+ return -1;
+
+
+
+ }
 
 
 
