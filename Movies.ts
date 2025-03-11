@@ -24,7 +24,15 @@
         this.movies.set(id,newMovie);
     }
 
-
+   rateMovie(id:string,rating:number) : void
+   {
+        const movies=this.movies.get(id);
+        if(movies)
+        {
+            movies.rating=rating;
+        }
+   }
+   
 
 
 
