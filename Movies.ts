@@ -24,15 +24,17 @@
         this.movies.set(id,newMovie);
     }
 
-   rateMovie(id:string,rating:number) : void
+   rateMovie(id:string,rating:number) : Boolean
    {
         const movies=this.movies.get(id);
         if(movies)
         {
             movies.rating=rating;
+            return true;
         }
+        return false;
    }
-   
+
 
 
 
