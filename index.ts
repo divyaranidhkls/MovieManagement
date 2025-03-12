@@ -46,3 +46,4 @@ console.log(
   Movie.searchMoviesBasedOnKeyword("ka")
 );
 console.log("Searching and Retreiving Movies By id", Movie.getMovie("126"));
+console.log("Deleting Movie wityh the id ", Movie.removeMovie("125"));

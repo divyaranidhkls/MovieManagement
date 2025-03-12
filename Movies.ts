@@ -75,4 +75,7 @@ export class MovieManagement {
     }
     return null;
   }
+  removeMovie(id: string) {
+    this.movies.delete(id);
+  }
 }
