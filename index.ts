@@ -23,4 +23,6 @@ console.log(Movie.rateMovie("123", 4));
 console.log(Movie.rateMovie("123", 5));
 console.log(Movie.rateMovie("123", 3));
 console.log(Movie.getAverageRating("123"));
-console.log(Movie.getTopRatedMovies);
+console.log(Movie.getTopRatedMovies());
+console.log(Movie.getMoviesByGenre("Devotional"));
+// console.log(Movie.getMoviesByDirector("Rishab"));

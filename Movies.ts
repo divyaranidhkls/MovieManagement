@@ -51,5 +51,16 @@ export class MovieManagement {
 
       return AvgA - AvgB;
     });
+    return TopRated;
   }
+  getMoviesByGenre(genre: string) {
+    return Array.from(this.movies.values()).filter(
+      (movie) => movie.genre === genre
+    );
+  }
+  // getMoviesByDirector(director: string) {
+  //   return Array.from(this.movies.values()).filter(
+  //     (movie) => movie.director === director
+  //   );
+  //}
 }
