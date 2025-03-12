@@ -63,4 +63,9 @@ export class MovieManagement {
       (movie) => movie.director === director
     );
   }
+  searchMoviesBasedOnKeyword(keyword: string) {
+    return Array.from(this.movies.values()).filter((movie) =>
+      movie.title.toLowerCase().includes(keyword.toLowerCase())
+    );
+  }
 }
