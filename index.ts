@@ -45,3 +45,4 @@ console.log(
   "Searching Movies staring with ka",
   Movie.searchMoviesBasedOnKeyword("ka")
 );
+console.log("Searching and Retreiving Movies By id", Movie.getMovie("126"));

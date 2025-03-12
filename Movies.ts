@@ -68,4 +68,11 @@ export class MovieManagement {
       movie.title.toLowerCase().includes(keyword.toLowerCase())
     );
   }
+  getMovie(id: string): Movie | null {
+    const movie = this.movies.get(id);
+    if (movie) {
+      return movie;
+    }
+    return null;
+  }
 }
