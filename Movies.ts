@@ -58,9 +58,9 @@ export class MovieManagement {
       (movie) => movie.genre === genre
     );
   }
-  // getMoviesByDirector(director: string) {
-  //   return Array.from(this.movies.values()).filter(
-  //     (movie) => movie.director === director
-  //   );
-  //}
+  getMoviesByDirector(director: string) {
+    return Array.from(this.movies.values()).filter(
+      (movie) => movie.director === director
+    );
+  }
 }
